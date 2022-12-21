@@ -4,7 +4,7 @@ let h = w / 2
 let q = w / 4
 let e = w / 8
 let sx = w / 16
-let song = [
+let refr = [
     {r: false, n: Note.G, d: q + e}, // last
     {r: false,n: Note.G, d: e}, // chri-
     {r: false,n: Note.G, d: e}, // -st
@@ -56,7 +56,7 @@ let song = [
     { r: true, n: Note.C, d: q }
 ]
 basic.forever(function () {
-    song.forEach(part => {
+    refr.forEach(part => {
         if (part.r) {
             music.rest(part.d)
         } else {
