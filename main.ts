@@ -117,6 +117,80 @@ let refr = [
 { r: false, n: Note.C, d: h },
 { r: true, n: Note.C, d: q }
 ]
-basic.forever(function () {
 
+
+basic.forever(function () {
+    led.setBrightness(62)
+    basic.showLeds(`
+        . . . . .
+        . . . . .
+        . . . . .
+        . . . . .
+        . # # # .
+        `)
+    led.setBrightness(119)
+    basic.showLeds(`
+        . . . . .
+        . . . . .
+        . . . . .
+        . # # # .
+        # # # # #
+        `)
+    led.setBrightness(165)
+    basic.showLeds(`
+        . . . . .
+        . . . . .
+        . # # # .
+        # # # # #
+        # # # # #
+        `)
+    led.setBrightness(206)
+    basic.showLeds(`
+        . . . . .
+        . # # # .
+        . # # # .
+        # # # # #
+        # # # # #
+        `)
+    led.setBrightness(255)
+    basic.showLeds(`
+        . . # . .
+        . # # # .
+        # # # # #
+        # # # # #
+        # # # # #
+        `)
+    led.setBrightness(204)
+    basic.showLeds(`
+        . . . . .
+        . # # # .
+        . # # # .
+        # # # # #
+        # # # # #
+        `)
+    led.setBrightness(169)
+    basic.showLeds(`
+        . . . . .
+        . . . . .
+        . # # # .
+        # # # # #
+        # # # # #
+        `)
+    led.setBrightness(105)
+    basic.showLeds(`
+        . . . . .
+        . . . . .
+        . . . . .
+        . . . . .
+        . # # # .
+        `)
+    led.setBrightness(49)
+    basic.showLeds(`
+        . . . . .
+        . . . . .
+        . . . . .
+        . # # # .
+        # # # # #
+        `)
 })
+
