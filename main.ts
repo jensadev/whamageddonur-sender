@@ -1,62 +1,101 @@
-let bpm = 108
+//radio.setGroup(1)
+//radio.sendNumber(0)
+//radio.sendValue("start", 0)
+basic.pause(1000)
+let bpm = 106
 let w = bpm * 18
 let h = w / 2
 let q = w / 4
 let e = w / 8
 let sx = w / 16
-let refr = [
-    {r: false, n: Note.G, d: q + e}, // last
-    {r: false,n: Note.G, d: e}, // chri-
-    {r: false,n: Note.G, d: e}, // -st
-    {r: false,n: Note.F, d: q}, // -mas
-    {r: false,n: Note.C, d: e},
-    // second bar
-    {r: false,n: Note.G, d: e}, // I
-    {r: false,n: Note.G, d: e}, // gave
-    {r: false,n: Note.A, d: q}, // you
-    {r: false,n: Note.F, d: q + e}, // my
-    {r: false,n: Note.C, d: e}, // heart
-    // third bar
-    {r: false,n: Note.G, d: e}, // but
-    {r: false,n: Note.G, d: e}, // the 
-    {r: false, n: Note.A, d: q }, // next
-    {r: false, n: Note.F, d: q + e}, // day
-    {r: false, n: Note.F, d: e }, // you
+
+//music.setTempo(106)
+
+let intro = [
+    { r: false, n: Note.C, d: w },
+    // second
+    { r: false, n: Note.C, d: h },
+    { r: false, n: Note.C, d: e },
+    { r: false, n: Note.D, d: e },
+    { r: false, n: Note.E, d: e },
+    { r: false, n: Note.F, d: e },
+    // third
+    { r: false, n: Note.G, d: q },
+    { r: false, n: Note.F, d: e },
+    { r: false, n: Note.D, d: e },
+    { r: false, n: Note.D, d: h }, 
     // fourth
-    {r: false, n: Note.E, d: e }, // gave
-    {r: false, n: Note.F, d: e }, // it
-    { r: false, n: Note.E, d: e }, // a
-    { r: false, n: Note.D, d: e }, // way
-    { r: false,n: Note.D, d:h }, // y---
-    // fifth bar
-    { r: false,n: Note.A, d: q+e }, // this
-    { r: false,n: Note.G, d: e }, // yea
-    { r: false,n: Note.G, d: q }, // r---
-    { r: false,n: Note.D, d: e }, // to
-    { r: false,n: Note.D, d: e}, // save
+    { r: false, n: Note.D, d: h },
+    { r: false, n: Note.C, d: e },
+    { r: false, n: Note.A, d: e },
+    { r: false, n: Note.F, d: e },
+    { r: false, n: Note.D, d: e },
+    // fifth
+    { r: false, n: Note.E, d: w },
     // sixth
-    { r: false, n: Note.A, d: e},
-    {r: false, n: Note.Bb, d: e},
-    { r: false,n: Note.A, d: e }, // me
-    { r: false,n: Note.G, d: e }, // from
-    { r: false,n: Note.G, d: q + e }, // tears
+    { r: false, n: Note.E, d: h },
+    { r: false, n: Note.D, d: e },
+    { r: false, n: Note.Bb, d: e },
+    { r: false, n: Note.G, d: e },
+    { r: false, n: Note.E, d: e },
+    // seventh
+    { r: false, n: Note.C, d: w },
+    // eigth
+    { r: false, n: Note.C, d: w },
+]
+
+let refr = [
+    { r: false, n: Note.G, d: q + e },
+    { r: false, n: Note.G, d: e },
+    { r: false, n: Note.G, d: e },
+    { r: false, n: Note.F, d: q },
+    { r: false, n: Note.C, d: e },
+    // second bar
+    { r: false, n: Note.G, d: e },
+    { r: false, n: Note.G, d: e },
+    { r: false, n: Note.A, d: q },
+    { r: false, n: Note.F, d: q + e },
+    { r: false, n: Note.C, d: e },
+    // third bar
+    { r: false, n: Note.G, d: e },
+    { r: false, n: Note.G, d: e },
+    { r: false, n: Note.A, d: q },
+    { r: false, n: Note.F, d: q + e },
+    // fourth
+    { r: false, n: Note.E, d: e },
+    { r: false, n: Note.F, d: e },
+    { r: false, n: Note.E, d: e },
+    { r: false, n: Note.D, d: e },
+    { r: false, n: Note.D, d: h },
+    // fifth bar
+    { r: false, n: Note.A, d: q + e },
+    { r: false, n: Note.G, d: e },
+    { r: false, n: Note.G, d: q },
+    { r: false, n: Note.D, d: e },
+    { r: false, n: Note.D, d: e },
+    // sixth
+    { r: false, n: Note.A, d: e },
+    { r: false, n: Note.Bb, d: e },
+    { r: false, n: Note.A, d: e },
+    { r: false, n: Note.G, d: e },
+    { r: false, n: Note.G, d: q + e },
     { r: false, n: Note.F, d: e },
     // sevent bar
-    { r: false, n: Note.F, d: e }, // ill
-    { r: false, n: Note.E, d: e }, // give
-    { r: false, n: Note.F, d: e }, // it
-    { r: false, n: Note.E, d: e }, // to --
-    { r: false, n: Note.E, d: e }, // -- some 
-    { r: false, n: Note.F, d: q }, // some
-    { r: false, n: Note.E, d: e }, // spec
+    { r: false, n: Note.F, d: e },
+    { r: false, n: Note.E, d: e },
+    { r: false, n: Note.F, d: e },
+    { r: false, n: Note.E, d: e },
+    { r: false, n: Note.E, d: e },
+    { r: false, n: Note.F, d: q },
+    { r: false, n: Note.E, d: e },
     // eigth
-    { r: false, n: Note.E, d: e }, // cial
-    { r: false, n: Note.C, d: e }, // cial
-    {r: false, n: Note.C, d: h},
+    { r: false, n: Note.E, d: e },
+    { r: false, n: Note.C, d: e },
+    { r: false, n: Note.C, d: h },
     { r: true, n: Note.C, d: q }
 ]
 basic.forever(function () {
-    refr.forEach(part => {
+    intro.forEach(part => {
         if (part.r) {
             music.rest(part.d)
         } else {
