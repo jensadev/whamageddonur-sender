@@ -1,6 +1,9 @@
+radio.setGroup(666)
+
 input.onButtonPressed(Button.A, function () {
     basic.pause(1000)
     radio.sendValue("start", 0)
+    basic.pause(1000)
     intro.forEach(part => {
         if (part.r) {
             music.rest(part.d)
@@ -16,7 +19,7 @@ input.onButtonPressed(Button.A, function () {
         }
     })
 })
-// radio.setGroup(1)
+
 // radio.sendNumber(0)
 radio.onReceivedValue(function(name: string, value: number) {
     
@@ -30,7 +33,7 @@ let e = w / 8
 let sx = w / 16
 // music.setTempo(106)
 
-
+music.setVolume(200)
 
 let intro = [
 { r: false, n: Note.C, d: w },
