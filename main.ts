@@ -37,11 +37,24 @@ let song = [
     { r: false,n: Note.D, d: e }, // to
     { r: false,n: Note.D, d: e}, // save
     { r: false, n: Note.A, d: e},
-    {r: false, n: Note.D3, d: e},
+    {r: false, n: Note.D, d: e},
     { r: false,n: Note.Bb, d: e }, // me
     { r: false,n: Note.A, d: e }, // from
     { r: false,n: Note.G, d: q + e }, // tears
-
+    { r: false, n: Note.F, d: e },
+    // sevent bar
+    { r: false, n: Note.F, d: e }, // ill
+    { r: false, n: Note.E, d: e }, // give
+    { r: false, n: Note.F, d: e }, // it
+    { r: false, n: Note.E, d: e }, // to --
+    { r: false, n: Note.E, d: e }, // -- some 
+    { r: false, n: Note.F, d: e }, // some
+    { r: false, n: Note.F, d: q }, // one
+    { r: false, n: Note.E, d: e }, // spec
+    { r: false, n: Note.E, d: e }, // cial
+    { r: false, n: Note.C, d: e }, // cial
+    {r: false, n: Note.C, d: h+q},
+    { r: true, n: Note.C, d: h }
 ]
 basic.forever(function () {
     song.forEach(part => {
